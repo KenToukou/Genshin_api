@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Excel-like Table with FastAPI and Jinja2</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS for the table -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+</head>
+
+<body>
+    <h1>Excel-like Table with FastAPI and Jinja2</h1>
+    {{ table|safe }}
+    <table border="1" class="dataframe table table-bordered table-striped table-hover excel-table"></table>
+    <!-- JavaScript for the table -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('table').DataTable({
+                "paging": false
+            });
+        });
+    </script>
+</body>
+
+</html>
